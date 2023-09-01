@@ -1,5 +1,14 @@
-function Main({ children }) {
-  return <main className="main">{children}</main>;
-}
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./components/App";
+import "./index.css";
+import { QuizProvider } from "./context/QuizContext";
 
-export default Main;
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <QuizProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </QuizProvider>
+);

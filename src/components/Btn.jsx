@@ -1,4 +1,9 @@
-function NextBtn({ answer, dispatch, numQuestions, index }) {
+import { useQuiz } from "../context/QuizContext";
+
+function NextBtn() {
+  const { dispatch, answer, index, questions } = useQuiz();
+  const numQuestions = questions.length;
+
   if (answer === null) {
     return null;
   }
